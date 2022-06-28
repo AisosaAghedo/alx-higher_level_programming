@@ -3,4 +3,3 @@ i = 0
 while i <= 98:
     print("{} = {}".format(i, hex(i)))
     i += 1
-
