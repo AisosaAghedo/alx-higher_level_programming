@@ -5,7 +5,7 @@ def square_matrix_simple(matrix=[]):
     
     i = 0
     while i < length:
-        new_list[i] = list(map((lambda(x: x * x),matrix[i] ))
+        new_list[i] = list(map((lambda x: x * x),matrix[i] ))
         i = i + 1
     return(new_list)
 
