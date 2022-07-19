@@ -18,7 +18,7 @@ class Node():
 
     @property
     def data(self):
-        
+
         """retrives data"""
         return self.__data
 
@@ -47,6 +47,7 @@ class Node():
 
 class SinglyLinkedList():
     """Class SinglyLinkedList"""
+    
     def __init__(self):
         """Initialization of SinglyLinkedList class"""
         
@@ -76,9 +77,10 @@ class SinglyLinkedList():
 
     def __str__(self):
         """String"""
+
         strg = ""
-        actual = self.__head
-        while actual:
-            strg += str(actual.data) + "\n"
-            actual = actual.next_node
+        temp = self.__head
+        while temp:
+            strg += str(temp.data) + "\n"
+            temp = temp.next_node
         return strg[:-1]
