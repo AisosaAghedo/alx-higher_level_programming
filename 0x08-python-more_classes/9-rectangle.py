@@ -11,6 +11,14 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ instantiation of class Rectangle """
+        if type(width) != int:
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if type(height) != int:
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         self.height = height
         self.width = width
         Rectangle.number_of_instances = Rectangle.number_of_instances + 1
@@ -78,7 +86,6 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area == rect_2.area:
             return rect_1
-
 
     @classmethod
     def square(cls, size=0):
