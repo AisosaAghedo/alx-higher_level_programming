@@ -1,0 +1,52 @@
+tests for module 2-matrix_divided.txt
+
+=========================================
+importing the module:
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Divide matrix of integers with an integer:
+>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Divide matrix of integers with a float:
+>>> matrix_divided([[2, 4, 6], [3, 6, 9]], 2.2)
+[[0.91, 1.82, 2.73], [1.36, 2.73, 4.09]]
+
+Divide a matrix of floats and integers with a float:
+>>> matrix_divided([[2, 4.4, 6.45], [3.666, 6, 9.57]], 2.2)
+[[0.91, 2.0, 2.93], [1.67, 2.73, 4.35]]
+
+Divide a matrix of floats with a float:
+>>> matrix_divided([[2.44, 4.49, 6.45], [3.666, 6.99, 9.57]], 3.2)
+[[0.76, 1.4, 2.02], [1.15, 2.18, 2.99]]
+
+Divide a matrix of numbers with 0:
+>>> matrix_divided([[8, 7, 9], [45, 5, 4]], 0)
+Traceback (most recent call last):
+   ...
+ZeroDivisionError: division by zero
+
+Divide matrix of numbers with a string:
+>>> matrix_divided([[3, 7, 8], [7, 9, 4]], "4")
+Traceback (most recent call last):
+   ...
+TypeError: div must be a number
+
+Divide matrix of (lists of lists) of integers/strings with an number:
+>>> matrix_divided([[6, "6", 9], ["school", 8, '8']], 2) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide matrix of (lists of tuples) of integers/float with a number:
+>>> matrix_divided([(5, 8, 8), (7, 8.6, 9.4)], 6)
+Traceback (most recent call last):
+   ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide a matrix of different sizes with a number:
+>>> matrix_divided([[6, 8, 9], [3, 9]], 6)
+Traceback (most recent call last):
+   ...
+TypeError: Each row of the matrix must have the same size
+

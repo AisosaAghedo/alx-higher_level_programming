@@ -1,0 +1,54 @@
+tests for 0-add_integer module
+=============================
+importing the module:
+>>> add_integer = __import__("0-add_integer").add_integer
+
+test for positive integers:
+>>> add_integer(6, 2)
+8
+
+test for positive and negative integers:
+>>> add_integer(8, -3)
+5
+
+test for negative and positive integers:
+>>> add_integer(-2, 10)
+8
+
+test for two negative integers:
+>>> add_integer(-4, -4)
+-8
+
+test for float and int:
+>>> add_integer(4.3, 6)
+10
+
+test for  types int and float:
+>>> add_integer(5, 7.2)
+12
+
+test for types float and float:
+>>> add_integer(4.4, 1.1)
+5
+
+test for string and int:
+>>> add_integer("8", 8)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+test for int and string:
+>>> add_integer(9, "school")
+Traceback (most recent call last):
+   ...
+TypeError: b must be an integer
+
+test for NaN(not a number):
+>>> add_integer("#", 5)
+Traceback (most recent call last):
+   ...
+TypeError: a must be an integer
+
+test for args < 2:
+>>> add_integer(4)
+102
