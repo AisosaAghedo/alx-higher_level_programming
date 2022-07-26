@@ -1,0 +1,47 @@
+tests for 5-text_indentation.py file
+======================================
+
+importing the file:
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+check for char '.' in a string:
+>>> text_indentation("My name is Aisosa. i am an alx student")
+My name is Aisosa.
+<BLANKLINE>
+i am an alx student
+
+check for char '?' in a string:
+>>> text_indentation("What is your name? My name is Aisosa, an alx student")
+What is your name?
+<BLANKLINE>
+My name is Aisosa, an alx student
+
+check for char ':' in a string:
+>>> text_indentation("TypeError: text must be a string")
+TypeError:
+<BLANKLINE>
+text must be a string
+
+check for chars '.', '?' and ':':
+>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi: litteram videor an totas paginas commovere""") 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur tibi:
+<BLANKLINE>
+litteram videor an totas paginas commovere
+
+
+check for another  data type:
+>>> text_indentation([3, 6, 8, 9])
+Traceback (most recent call last):
+   ...
+TypeError: text must be a string
+
+check for no args:
+>>> text_indentation()
+Traceback (most recent call last):
+   ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
