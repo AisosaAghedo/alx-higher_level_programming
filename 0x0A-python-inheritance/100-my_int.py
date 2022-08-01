@@ -3,6 +3,7 @@
 class int and subclass Myint
 """
 
+
 class MyInt(int):
     """ inherits from class int """
 
