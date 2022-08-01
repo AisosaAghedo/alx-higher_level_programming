@@ -4,6 +4,7 @@
 a class BaseGeometry
 """
 
+
 class BaseGeometry:
     """ public instance method """
 
