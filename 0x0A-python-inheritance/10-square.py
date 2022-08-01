@@ -17,7 +17,10 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{:s} must be greater than 0".format(name))
 
+
 """ subclass """
+
+
 class Rectangle(BaseGeometry):
     """ subclass rectangle"""
     def __init__(self, width, height):
@@ -35,12 +38,15 @@ class Rectangle(BaseGeometry):
         """informal string representation of the rectangle"""
         return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
 
+
 """ subclass square of rectangle """
+
+
 class Square(Rectangle):
     """ sub class of a sub class """
 
     def __init__(self, size):
         """ instantiation """
         self.integer_validator("size", size)
-        super().__init__(size,size)
+        super().__init__(size, size)
         self.__size = size
