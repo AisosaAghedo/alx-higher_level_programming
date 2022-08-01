@@ -1,0 +1,43 @@
+test for module my_list
+=============================
+
+importing the module:
+>>> MyList = __import__('1-my_list').MyList
+
+Checking that MyList inherits from list:
+>>> issubclass(MyList, list)
+True
+
+Checking for empty list:
+>>> i = MyList()
+>>> i.print_sorted()
+[]
+
+Checking that appendng works:
+>>> i.append(5)
+>>> i.append(2)
+>>> i.append(3)
+>>> i.append(4)
+>>> print(i)
+[5, 2, 3, 4]
+
+Checking for list already in correct order:
+>>> i.print_sorted()
+[2, 3, 4, 5]
+
+Checking for one negative number:
+>>> i.append(-1)
+>>> i.append(1)
+>>> i.print_sorted()
+[-1, 1, 2, 3, 4, 5]
+
+Checking for all negative numbers:
+>>> i = MyList()
+>>> i.append(-10)
+>>> i.append(-1)
+>>> i.append(-7)
+>>> i.append(-2)
+>>> i.append(-8)
+>>> i.print_sorted()
+[-10, -8, -7, -2, -1]
+
