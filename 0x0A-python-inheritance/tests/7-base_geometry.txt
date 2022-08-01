@@ -61,3 +61,33 @@ Checking for too many arguments:
 Traceback (most recent call last):
    ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+checking for type string:
+>>> BG.integer_validator("string", "hello")
+Traceback (most recent call last):
+   ...
+TypeError: string must be an integer
+	
+checking for type tuple:
+>>> BG.integer_validator("tuple", (67, 6))
+Traceback (most recent call last):
+   ...
+TypeError: tuple must be an integer
+
+checking for type list:
+>>> BG.integer_validator("list", [7, 2, 6])
+Traceback (most recent call last):
+   ...
+TypeError: list must be an integer
+
+checking for type dict:
+>>> BG.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+  ...
+TypeError: dict must be an integer
+
+checking for type set:
+>>> BG.integer_validator("set", {"python", "object"})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
