@@ -8,7 +8,7 @@ after each line containing a specific string
 def append_after(filename="", search_string="", new_string=""):
     """appends "new_string" after a line containing
     "search_string" in "filename" """
-     text = ""
+    text = ""
     with open(filename) as f:
         for line in f:
             text += line
