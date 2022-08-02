@@ -8,14 +8,11 @@ after each line containing a specific string
 def append_after(filename="", search_string="", new_string=""):
     """appends "new_string" after a line containing
     "search_string" in "filename" """
-    with open(filename, 'r', encoding='utf-8') as f:
-        new_list = []
-        while True:
-            line = f.readline()
-            if line == "":
-                break
-            new_list.append(line)
+     text = ""
+    with open(filename) as f:
+        for line in f:
+            text += line
             if search_string in line:
-                new_list.append(new_string)
-    with open(filename, 'w', encoding='utf-8') as f:
-        f.writelines(line_list)
+                text += new_string
+    with open(filename, "w") as w:
+        w.write(text)
