@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-from json import load
 """
  function that creates an Object from a “JSON file”
 """
+from json import load
 
 
 def load_from_json_file(filename):
