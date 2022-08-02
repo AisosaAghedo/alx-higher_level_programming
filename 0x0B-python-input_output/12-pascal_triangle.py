@@ -9,7 +9,7 @@ def pascal_triangle(n):
     """
     returns a list of list of integers
     """
-     if n == 0:
+    if n == 0:
         return []
     new_list = [[1]]
     while len(new_list) != n:
