@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ A sub class Rectangle """
-from  models.base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -76,9 +76,18 @@ class Rectangle(Base):
 
     def display(self):
         """print to stdout"""
+        [print("") for y in range(self.__y)]
         for i in range(self.__height):
-            print("#" * self.__width)
+            [print(" ", end="") for x in range(self.__x)]
+            [print("#", end="") for w in range(self.__width)]
+            print("")
 
     def __str__(self):
         """ __str__ representation of the rectangle"""
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.__x,
+                                                                 self.__y,
+                                                                 self.__width,
+                                                                 self.__height)
+
+
