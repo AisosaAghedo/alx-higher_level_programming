@@ -38,14 +38,12 @@ class Base:
     """ static method that returns the list of the JSON string repr"""
     @staticmethod
     def from_json_string(json_string):
-        new_list = '[]'
         if json_string is None:
-            return new_list
+            return []
         elif len(json_string) == 0:
-            return new_list
+            return []
         else:
-            new_list = loads(json_string)
-            return new_list
+            return loads(json_string)
 
     """ class method that returns the instance with all atrributes set"""
     @classmethod
