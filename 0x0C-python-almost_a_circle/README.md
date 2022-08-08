@@ -15,8 +15,7 @@ args and kwargs
 Serialization/Deserialization
 JSON
 
-
-File Structure
+File Structure for project
 models
 base.py - Contains the base class Base
 rectangle.py - Contains the class Rectangle, a subclass of Base
