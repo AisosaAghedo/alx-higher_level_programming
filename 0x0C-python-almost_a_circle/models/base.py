@@ -66,3 +66,45 @@ class Base:
                 return [cls.create(**dict) for dict in list_dicts]
         except IOError:
             return []
+
+    """ class method saves data to a csv file """
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ opening file in write mode """
+        filename = cls.__name__ + '.csv'
+
+        main_list = []
+        i = 0
+
+        with open(filename, 'w') as f:
+            write = csv.writer(f)
+            for obj in list_objs:
+                my_dict = obj.to_dictionary()
+                new_list = list(my_dict.keys())
+                if i == 0:
+                    main_list.append(new_list)
+                new_list = list(my_dict.values())
+                main_list.append(new_list)
+                i += 1
+            write.writerows(main_list)
+
+    """ class method reads data from csv file then creates a list of instances
+    from it"""
+    @classmethod
+    def load_from_file_csv(cls):
+        """ opening file in read mode """
+        my_list = []
+        i = 0
+        new_list = []
+        new_dict = {}
+        obj_list = []
+        filename = cls.__name__ + '.csv'
+
+
+        with open(filename, 'r') as f:
+            my_list = list(csv.DictReader(f))
+            for dictionary in my_list:
+                for k, v in dictionary.items():
+                    new_dict[k] = int(v)
+                obj_list.append(cls.create(**new_dict))
+        return obj_list
