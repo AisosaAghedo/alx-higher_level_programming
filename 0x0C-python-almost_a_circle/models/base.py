@@ -100,7 +100,6 @@ class Base:
         obj_list = []
         filename = cls.__name__ + '.csv'
 
-
         with open(filename, 'r') as f:
             my_list = list(csv.DictReader(f))
             for dictionary in my_list:
