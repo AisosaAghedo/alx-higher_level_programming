@@ -90,4 +90,36 @@ class Rectangle(Base):
                                                                  self.__width,
                                                                  self.__height)
 
+    def update(self, *args, **kwargs):
+        """ update args and kwargs arguments """
+        if len(args) > 0:
+            for i in args:
+                if len(args) == 1:
+                    self.id = args[0]
+                elif len(args) == 2:
+                    self.id, self.width = args
+                elif len(args) == 3:
+                    self.id, self.width, self.height = args
+                elif len(args) == 4:
+                    self.id, self.width, self.height, self.x = args
+                elif len(args) == 5:
+                    self.id, self.width, self.height, self.x, self.y = args
 
+        else:
+            for key in kwargs:
+                if key == 'id':
+                    self.id = kwargs[key]
+                elif key == 'width':
+                    self.width = kwargs[key]
+                elif key == 'height':
+                    self.height = kwargs[key]
+                elif key == 'x':
+                    self.x = kwargs[key]
+                elif key == 'y':
+                    self.y = kwargs[key]
+
+    def to_dictionary(self):
+        """ return dict representation """
+        New_dict = {'id': self.id, 'width': self.width,
+                    'height': self.height, 'x': self.x, 'y': self.y}
+        return New_dict
