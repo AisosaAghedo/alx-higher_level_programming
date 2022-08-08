@@ -2,6 +2,7 @@
 """ A class named base """
 from json import dumps
 from json import loads
+import csv
 
 
 class Base:
