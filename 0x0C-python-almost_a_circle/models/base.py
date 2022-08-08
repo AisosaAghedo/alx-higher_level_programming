@@ -42,7 +42,7 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return new_list
         else:
-            new_list = list(loads(json_string))
+            new_list = loads(json_string)
             return new_list
 
     """ class method that returns the instance with all atrributes set"""
