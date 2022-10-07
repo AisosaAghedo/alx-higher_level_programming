@@ -8,7 +8,7 @@ if __name__ == "__main__":
                          db=argv[3], port=3306)
     cur = db.cursor()
     cur.execute('''SELECT * FROM states WHERE states.name
-                LIKE %s ORDER BY id ASC;''',(argv[4],))
+                LIKE %s ORDER BY id ASC;''', (argv[4],))
     result = cur.fetchall()
     cur.close()
     db.close()
