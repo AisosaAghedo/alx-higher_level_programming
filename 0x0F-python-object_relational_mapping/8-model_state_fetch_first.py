@@ -11,4 +11,7 @@ if __name__ == '__main__':
                             argv[1], argv[2], argv[3]), pool_pre_ping=True)
     session = Session(bind=engine)
     instance = session.query(State).order_by(State.id).first()
-    print("{}: {}".format(instance.id, instance.name))
+    if (State is None):
+        print("Nothing")
+    else:
+        print("{}: {}".format(instance.id, instance.name))
