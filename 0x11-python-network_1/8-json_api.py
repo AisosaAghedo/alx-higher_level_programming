@@ -16,5 +16,5 @@ if __name__ == '__main__':
             print("No result")
         else:
             print("[{}] {}".format(rdict['id'], rdict['name']))
-    except:
+    except ValueError:
         print("Not a valid JSON")
