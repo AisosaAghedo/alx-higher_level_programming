@@ -5,6 +5,7 @@ if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     with urlopen(url) as response:
         script = response.read()
-        print("- type: {}".format(type(script)))
-        print("- content: {}".format(script))
-        print("- utf8 content: {}".format(script.decode('utf-8')))
+        print("Body response:")
+        print("\t- type: {}".format(type(script)))
+        print("\t- content: {}".format(script))
+        print("\t- utf8 content: {}".format(script.decode('utf-8')))
