@@ -6,10 +6,11 @@ Print all commits by: `<sha>: <author name>` (one by line)"""
 if __name__ == '__main__':
     import requests
     from sys import argv
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[1], argv[2])
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
     r = requests.get(url)
     x = r.json()
     for i in range(10):
         print("{}: {}".format(
                 x[i]["sha"],
                 x[i]["commit"]["author"]["name"]))
+
